@@ -1,4 +1,4 @@
-# S01 - Introduction to ES6
+# S01 - Introduction3 to ES6
 
 ## Playing with sintax
 
@@ -155,21 +155,88 @@ myFunction(1, 2, 3, 4, 5, 6, 7)
 
 ```javascript
 let { prop1, prop2 } = { prop1: 10, prop2: 20 }
+
+console.log(prop1)
+console.log(prop2)
 ```
 
-```javascript
-let x, y;
-{ prop1, prop2 } = { prop1:10, prop2:20 }
-
+Output:
+```
+10
+20
 ```
 
 ```javascript
 let { prop1:x, prop2:y } = { prop1:10, prop2:20 }
+
+console.log(x)
+console.log(y)
 ```
 
+Output:
+```
+10
+20
+```
+
+```javascript
+let [a1, a2] = [10, 20, 30, 40]
+
+console.log(a1)
+console.log(a2)
+```
+
+Output:
+```
+10
+20
+```
+
+Spread operator + array destructuring assignment
+
+```javascript
+let [a1, a2, ...aRest] = [10, 20, 30, 40]
+
+console.log(a1)
+console.log(a2)
+console.log(aRest)
+```
+
+Output:
+```
+10
+20
+[30, 40]
+```
 #### The arrow functions
 
-## ES6 library
-## Asynchronous programming
-## Object Oriented Javascript
-## Modular programming
+ES6 provides a new way to create functions using the => operator. These functions are called as arrow functions. This new method has a shorter syntax, and the arrow functions are the anonymous functions.
+
+```javascript
+let circleArea = (pi, r) => {
+ let area = pi * r * r;
+ return area;
+}
+let result = circleArea(3.14, 3);
+console.log(result);
+```
+
+```javascript
+var circleArea = function(pi, r) {
+ var area = pi * r * r;
+ return area;
+}
+var result = circleArea(3.14, 3);
+console.log(result);
+```
+
+```
+28.26
+```
+
+##### Difference between arrow functions and traditional functions
+
+The arrow functions cannot be used as object constructors that is, the new operator cannot be applied on them.
+Apart from syntax, the this value, and the new operator, everything else is the same between the arrow and traditional functions, that is, they both are the instances of the Function constructor.
+
+
